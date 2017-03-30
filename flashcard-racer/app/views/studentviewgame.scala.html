@@ -1,0 +1,26 @@
+@import dtos._ 
+@import actormessages._
+
+@(game: GameDescriptor)
+
+@main(title = Messages("homecontroller.joingame.title")) {
+
+<div class="row">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+    <div class="row column log-in-form">
+   <div class="column">
+	Great. You managed to join a game with pin number @game.getPin().
+	</br>
+	<a class="button" href="@routes.NewGameController.playGame(game.getPath())">Play!</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript" src="@routes.Assets.versioned("js/foundation.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/common.js")"></script>
+
+}

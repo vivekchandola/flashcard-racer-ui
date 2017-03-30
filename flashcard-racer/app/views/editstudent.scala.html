@@ -1,0 +1,33 @@
+@import models.Student
+@import dtos.StudentEditDTO
+
+@(form: Form[StudentEditDTO], student: Student)
+
+@main(title = Messages("homecontroller.teacher.title")) {
+
+<div class="row">
+	<div class="medium-6 columns">
+		<h2>Change information for <b>@student.getName()</b></h2>
+		<div class="row column log-in-form">
+		@if(form.hasGlobalErrors) {
+   	  <p class="error">
+	        @for(error <- form.globalErrors) {
+	            <p>@Messages(error.messages, error.arguments.toArray: _*)</p>
+	        }
+   			</p>
+		}
+			@helper.form(action = routes.EditStudentController.edit(student.getId())) {
+				<div class="medium-8 column">
+					@helper.inputText(form("login"), '_showConstraints -> false, '_label -> "Username")
+					@helper.inputPassword(form("password"), '_showConstraints -> false, '_label -> "Password")
+					@helper.inputPassword(form("verifyPassword"), '_showConstraints -> false, '_label -> "Verify password")
+				</div>
+				<button type="submit" class="button expanded">Submit changes</button>
+				<a href="@routes.StudentController.index()" class="button hollow expanded">Back</a>
+				}
+		</div>
+	</div>
+
+</div>
+}
+

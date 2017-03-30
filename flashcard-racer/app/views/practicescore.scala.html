@@ -1,0 +1,14 @@
+@import dtos._ 
+
+@(session: PracticeSession)
+
+@main(title = Messages("homecontroller.practicesessionscore.title")) {
+
+    
+<div class="row">
+	<div class="medium-8 columns">
+		<h1>@session.getNumCorrect() / @session.getSessionLength()</h1>
+		<a class="button" href="@routes.PracticeController.initializePractice()">Play again?</a>
+	</div>
+</div>
+}

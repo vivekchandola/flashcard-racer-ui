@@ -1,0 +1,11 @@
+homecontroller.index.title = Welcome student!
+homecontroller.teacher.title = Welcome teacher!
+homecontroller.admin.title = Welcome admin!
+homecontroller.carddeck.title = Card decks
+homecontroller.createnewgame.title = Create New Game
+homecontroller.playgame.title = Play Game
+homecontroller.placticeskill.title = Praktiz yo' skillz
+homecontroller.practicesessionscore.title = Practice Session Score
+homecontroller.practiceride.title = Pick yo' ride
+homecontroller.joingame.title = Join a game
+homecontroller.game.title = Game

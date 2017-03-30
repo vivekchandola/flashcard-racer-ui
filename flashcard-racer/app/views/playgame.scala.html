@@ -1,0 +1,19 @@
+@import dtos._ 
+@import actormessages._
+
+@main(title = Messages("homecontroller.playgame.title")) {
+	<div class="row">
+		<div class="medium-4 columns"></div>
+		<div class="medium-4 columns">
+			<div id="currentCard"></div>
+			<input id="result" type="text" autocomplete="off" />
+			<a id="answer" href="#" class="button">Answer!</a>
+		</div>
+		<div class="medium-4 columns">
+			<div id="players">
+			</div>
+		</div>
+	</div>
+}
+
+<script type="text/javascript" src="@routes.Assets.versioned("js/game.js")"></script>

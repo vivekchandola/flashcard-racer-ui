@@ -1,0 +1,31 @@
+@import dtos.LoginDTO
+
+@(form: Form[LoginDTO])
+
+@main(title = Messages("homecontroller.admin.title")) {
+
+<div class="row">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+
+    <div class="row column log-in-form">
+
+      <h4 class="text-center">Enter your username and password</h4>	
+      @helper.form(action=routes.AdminController.login()) {
+      <div class="medium-9 column">
+	@helper.inputText(form("login"), '_showConstraints -> false, '_label -> "Username")
+	@helper.inputPassword(form("password"), '_showConstraints -> false, '_label -> "Password")
+	@if(flash.containsKey("errorMsg")) {@flash.get("errorMsg")}
+      </div>
+      <div class="columns">
+	<input type="submit" class="button expanded" value="Login">
+	<a href="/" class="button hollow expanded">Back</a>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="@routes.Assets.versioned("js/foundation.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+
+}
