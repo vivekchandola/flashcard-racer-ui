@@ -1,0 +1,39 @@
+ @(username: String) @main(title =
+Messages("homecontroller.teacher.title")) {
+
+
+<div class="row">
+	<div class="medium-6 medium-centered large-4 large-centered columns">
+		<div class="row column log-in-form">
+
+			<div class="column">Take a deep breath. You managed to log in
+				with username "@username".</div>
+			</br>
+			<div class="column center">
+				<div class="medium-centered">
+					<a class=" button
+					medium"
+						href="@routes.StudentController.index()"> Create a student</a> <a
+						class=" button
+					medium"
+						href="@routes.NewGameController.initializeNewGame()"> Create a Game</a>
+				</div>
+			</div>
+			@helper.form(action=routes.TeacherLoginController.logout()) {
+			<div class="columns">
+				<div class="columns">
+					<a href="/" class="button hollow expanded">Back</a>
+				</div>
+				<div class="columns">
+					<input type="submit" class="button expanded" value="Logout">
+				</div>
+			</div>
+			}
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="@routes.Assets.versioned("js/foundation.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+
+}

@@ -1,0 +1,34 @@
+@(message: String) 
+
+@main(title = Messages("homecontroller.teacher.title")) {
+
+<div class="row">
+	<div class="medium-6 medium-centered large-4 large-centered columns">
+	<form>
+	<div class="row column log-in-form">
+		<h4 class="text-center">Enter the username and </h4>
+		<h4 class="text-center">password</h4>
+		
+			<div class="medium-9 columns">
+				<label for="right-label">Username:</label>
+				<input type="text" id="right-label" placeholder="Username">
+			</div>
+			<div class="medium-9 columns">
+				<label for="right-label">Password:</label>
+				<input type="text" id="right-label" placeholder="password">
+			</div>
+
+			<div class="columns">
+				<input type="submit" class="button expanded" value="Login!">
+			</div>
+
+	</div>
+	</form>
+	</div>
+</div>
+
+<script type="text/javascript" src="@routes.Assets.versioned("js/foundation.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+
+
+}

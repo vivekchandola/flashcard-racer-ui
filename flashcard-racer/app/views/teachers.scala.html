@@ -1,0 +1,62 @@
+@import models.Teacher
+@import dtos.TeacherRegisterDTO
+
+@(form: Form[TeacherRegisterDTO], teachers: List[Teacher])
+
+@main(title = Messages("homecontroller.admin.title")) {
+
+<div class="row">
+	<div class="medium-6 columns">
+		<h2>Create New Teacher</h2>
+		<div class="row column log-in-form">
+		@if(form.hasGlobalErrors) {
+   			<p class="error">
+	        @for(error <- form.globalErrors) {
+	            <p>@Messages(error.messages, error.arguments.toArray: _*)</p>
+	        }
+   			</p>
+		}
+			@helper.form(action = routes.TeacherController.createTeacher()) {
+				<div class="medium-8 column">
+					@helper.inputText(form("login"), '_showConstraints -> false, '_label -> "Username")
+					@helper.inputPassword(form("password"), '_showConstraints -> false, '_label -> "Password")
+					@helper.inputPassword(form("verifyPassword"), '_showConstraints -> false, '_label -> "Verify password")
+				</div>
+				<button type="submit" class="button expanded">Create Teacher</button>
+				<a href="/" class="button hollow expanded">Back</a>
+				}
+		</div>
+	</div>
+	
+	<div class="medium-5 columns">
+		<h2>List of Teachers</h2>
+			<table class="stack hover">
+  				<thead>
+   				 <tr>
+      				<th>S.No.</th>
+      				<th>Username</th>
+      				<th>Edit</th>
+     				<th>Delete</th>
+    			</tr>
+  			</thead>
+  			<tbody>
+		@for((t, index) <- teachers.zipWithIndex) {
+			<tr>
+				<td><strong>@(index +1):</strong></td>
+			<td>
+			<div class="sticky">@t.getName()	
+			</div>
+			</td>
+			<td><a class="button  small" href="@routes.EditTeacherController.index(t.getId())">Edit</a></td>
+			<td><a class="button  hollow small" href="@routes.TeacherController.deleteTeacher(t.getId())">Delete</a></td>
+			</tr>
+		}
+		</tbody>
+			</table>
+		@helper.form(action=routes.AdminController.logout()) {
+		<input type="submit" class="button expanded" value="Logout">
+		}
+	</div>
+</div>
+}
+

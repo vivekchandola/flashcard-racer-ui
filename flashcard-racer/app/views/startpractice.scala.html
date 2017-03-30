@@ -1,0 +1,22 @@
+@import dtos._ 
+
+@main(title = Messages("homecontroller.practiceride.title")) {
+
+    
+<div class="row">
+			<h1>Pick yo' ride</h1>
+			<form method="POST" action="@routes.PracticeController.startSession()">
+				<div class="medium-6 columns" style="width: 20rem;">
+				<h5>Difficulty</h5>
+				<select name="difficulty">
+					<option value="EASY">Kia</option>
+					<option value="MEDIUM">BMW</option>
+					<option value="HARD">Ferrari</option>
+				</select>
+				</div>
+				<div class="row columns" style="width: 20rem;">
+				<input type="submit" class="button expanded" value="Start practice!"/>
+				</div>
+			</form>
+		</div>	
+}
