@@ -5,7 +5,7 @@
 1. Get the `activator` downloaded from here: `https://www.lightbend.com/activator/`
 2. Unzip the downloaded file
 3. Add the activator in the windows `PATH`. ```(path+= ACTIVATOR_HOME\bin;)```
-4. Download the source code from Github (`develop`) (https://github.com/EricKoppel/flashcard-racer.git)`
+4. Download the source code from Github (`develop`) (https://github.com/vivekchandola/flashcard-racer-ui.git)`
 5. Navigate to source code folder `(PATH_PROVIDED_IN_STEP_4\flashcard-racer)`
 
 ## Linux
@@ -15,7 +15,7 @@
 4. Retrieve the latest version (The source is found in the `flascard-racer` folder).
 
  ```
-git pull git@github.com:EricKoppel/flashcard-racer.git
+git pull git@github.com:vivekchandola/flashcard-racer-ui.git
 git checkout develop
  ```
  
