@@ -3,6 +3,7 @@ package controllers;
 import com.google.inject.Inject;
 
 import dtos.PracticeSession;
+import dtos.UserSelectedChoice;
 import models.enums.Difficulty;
 import play.data.DynamicForm;
 import play.data.Form;
@@ -24,12 +25,38 @@ public class PracticeController extends Controller {
 
     public Result startSession() {
         DynamicForm requestData = formFactory.form().bindFromRequest();
-        Difficulty difficulty = Difficulty.valueOf(requestData.get("difficulty"));
+        String value = requestData.get("radio1");
+        Difficulty difficulty;
+        if ("1".equals(value)) {
+            difficulty = Difficulty.valueOf(requestData.get("difficulty"));
+        } else {
+            difficulty = createGameWithOptions(requestData);
+        }
 
         Form<PracticeSession> form = formFactory.form(PracticeSession.class);
         form = form.fill(PracticeSession.startSession(difficulty));
 
         return ok(practice.render(form));
+    }
+
+    private Difficulty createGameWithOptions(DynamicForm requestData) {
+        Difficulty difficulty = Difficulty.EASY;
+        String add = requestData.get("add");
+        String substract = requestData.get("substract");
+        String multiply = requestData.get("multiply");
+        String division = requestData.get("division");
+        String questions = requestData.get("questions");
+        String timelimit = requestData.get("timelimit");
+        String maxnumber = requestData.get("maxnumber");
+        String minnumber = requestData.get("minnumber");
+        UserSelectedChoice userSelectedChoice = new UserSelectedChoice(questions, timelimit, maxnumber, minnumber, add,
+                substract, multiply, division);
+        difficulty.setListOps(userSelectedChoice.getOperators());
+        difficulty.setMaxNumber(userSelectedChoice.getMaximumNumber());
+        difficulty.setMinNumber(userSelectedChoice.getMinimumNumber());
+        difficulty.setTimer(userSelectedChoice.getTimer());
+        difficulty.setNumber(userSelectedChoice.getNumberOfQuestions());
+        return difficulty;
     }
 
     public Result submitSession() {

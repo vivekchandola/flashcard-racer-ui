@@ -1,15 +1,46 @@
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 
 .log-in-form {
-  border: 1px solid #cacaca;
-  padding: 1rem;
-  border-radius: 3px; }
-  
-  .template {
+	border: 1px solid #cacaca;
+	padding: 1rem;
+	border-radius: 3px;
+}
+
+.template {
+	color: #FFFFFF;
+	font-family: Amatic SC;
+	font-size: 10px;
+	font-weight: bold;
+	margin-left: 8px;
+	text-align: center;
+}
+
+.disabled {
+	opacity: 0.5;
+	text-decoration: line-through;
+}
+
+.enabled {
+	opacity: 1.0;
+	text-decoration: none;
+}
+
+#undo {
+   width: auto;
+  background: url("../images/Undo-icon.png") no-repeat;
+  background-size:100%;
+  opacity: 0.5;
   color: #FFFFFF;
-  font-family: Amatic SC;
-  font-size: 10px;
-  font-weight: bold;
-  margin-left: 8px;
-  text-align: center;
+  width: 30px;
+  height: 25px;
+}
+
+#redo {
+   width: auto;
+  background: url("../images/Redo-icon.png") no-repeat;
+  background-size:100%;
+  opacity: 0.5;
+  color: #FFFFFF;
+  width: 30px;
+  height: 25px;
 }

@@ -66,7 +66,7 @@ public class PracticeSession {
 		session.setNumCorrect(0);
 		session.setNumIncorrect(0);
 		session.setTimer(diff.getTimer());
-		session.setCard(CardUtil.randomCard(diff));
+		session.setCard(CardUtil.randomPracticeCard(diff));
 
 		return session;
 	}

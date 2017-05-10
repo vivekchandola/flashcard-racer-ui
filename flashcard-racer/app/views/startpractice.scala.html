@@ -27,10 +27,16 @@
 			<h5>Options</h5>
 			<div class="row columns" >
               <label>Choose operators</label>
-              <input id="add" type="checkbox" name="add" checked value="add"><label for="checkbox1">Add</label>
-              <input id="substract" type="checkbox" name="substract" value="sub" checked><label for="checkbox2">Substract</label>
-              <input id="multiply" type="checkbox" name="multiply" value="multi"  checked><label for="checkbox2">Multiply</label>
-              <input id="division" type="checkbox" name="division" value="div"  checked><label for="checkbox2">Division</label>
+              <input id="add" type="checkbox" name="add" checked value="add" onclick="optionsDisable('add')"><label for="add" id="addlabel">Add</label>
+              <input id="substract" type="checkbox" name="substract" value="sub" checked onclick="optionsDisable('substract')"><label for="substract" id="substractlabel">Substract</label>
+              <input id="multiply" type="checkbox" name="multiply" value="multi"  checked onclick="optionsDisable('multiply')"><label for="multiply" id="multiplylabel">Multiply</label>
+              <input id="division" type="checkbox" name="division" value="div"  checked onclick="optionsDisable('division')"><label for="division" id="divisionlabel">Division</label>
+            </div>
+           <div class="row columns" >
+              <div class="medium-6" id="undo">
+              </div>
+              <div class="medium-6" id="redo">
+              </div>
             </div>
 			<div class="row columns" >
            <div class="large-5 medium-5 columns">
