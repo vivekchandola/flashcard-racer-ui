@@ -5,7 +5,7 @@ import java.util.List;
 
 public enum Difficulty {
 
-	EASY(5, 20, 10,0,getList("+", "-")), MEDIUM(10, 15,20,5, getList("+", "-", "*")), HARD(20, 10,40,10, getList("+", "-", "*", "/"));
+	EASY(5, 20, 10,0,getList("+", "-")), MEDIUM(10, 15,20,5, getList("+", "-", "*")), HARD(20, 10,40,10, getList("+", "-", "*", "/")), CUSTOM(10, 20,10,0, getList("+", "-", "*", "/"));
 	private int number;
 	private int timer;
 	private int maxNumber;

@@ -40,7 +40,7 @@ public class PracticeController extends Controller {
     }
 
     private Difficulty createGameWithOptions(DynamicForm requestData) {
-        Difficulty difficulty = Difficulty.EASY;
+        Difficulty difficulty = Difficulty.CUSTOM;
         String add = requestData.get("add");
         String substract = requestData.get("substract");
         String multiply = requestData.get("multiply");
