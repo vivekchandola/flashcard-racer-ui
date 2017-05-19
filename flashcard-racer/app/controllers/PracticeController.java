@@ -71,4 +71,8 @@ public class PracticeController extends Controller {
             return ok(practicescore.render(session));
         }
     }
+    
+    public Result initializeHelp() {
+        return ok(views.html.help.render());
+    }
 }

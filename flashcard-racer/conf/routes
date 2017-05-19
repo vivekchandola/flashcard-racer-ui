@@ -8,6 +8,7 @@ POST    /			    			controllers.HomeController.login
 GET		/logout			    		controllers.HomeController.logout
 
 GET     /practice		    		controllers.PracticeController.initializePractice
+GET     /help		    			controllers.PracticeController.initializeHelp
 POST    /practice		    		controllers.PracticeController.startSession
 POST    /practice-session	    	controllers.PracticeController.submitSession
 
