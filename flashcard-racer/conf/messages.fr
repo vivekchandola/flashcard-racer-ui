@@ -12,7 +12,7 @@ homecontroller.game.title = Jeu
 homecontroller.help.title = Aide
 
 homecontroller.index.practice = Pratiquez le jeux de flash card
-homecontroller.index.practiceMode = Jouer
+homecontroller.index.practiceMode = Nouvelle partie!
 homecontroller.index.help = Aide!
 homecontroller.startpractice.select = Sélectionner votre option pour créer une partie
 homecontroller.startpractice.difficulty = Difficulté

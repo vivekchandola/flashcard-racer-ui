@@ -13,7 +13,7 @@ homecontroller.help.title = Help
 
 
 homecontroller.index.practice = Practice the flash card game
-homecontroller.index.practiceMode = Practice mode!
+homecontroller.index.practiceMode = New game!
 homecontroller.index.help = Help!
 homecontroller.startpractice.select = Select your option to create a game
 homecontroller.startpractice.difficulty = Difficulty

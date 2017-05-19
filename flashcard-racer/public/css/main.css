@@ -44,3 +44,18 @@
   width: 30px;
   height: 25px;
 }
+
+#frFlag {
+   width: auto;
+  background: url("../images/frFlag.png") no-repeat;
+  background-size:100%;
+
+}
+
+#ukFlag {
+   width: auto;
+  background: url("../images/ukFlag.png") no-repeat;
+  background-size:100%;
+}
+
+ 

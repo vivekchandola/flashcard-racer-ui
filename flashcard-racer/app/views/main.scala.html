@@ -14,8 +14,14 @@
       		<div class="row column text-center">
         		<h1>@title</h1>
       		</div>
-      		
+      		<form method="GET" action="/language"/>
+                <input name="language" type="submit" value="en" id="ukFlag" title="English" />
+                <input name="language" type="submit" value="fr" id="frFlag" title="Français" />
+            
+            </form>
     	</div>
+    	
+    	
     	<div>
         	@content
         </div>
