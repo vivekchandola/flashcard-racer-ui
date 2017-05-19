@@ -72,22 +72,22 @@ public class PracticeController extends Controller {
             return ok(practicescore.render(session));
         }
     }
-    
+
     private void setCarValue(PracticeSession session) {
         try {
-            if(session.getNumCorrect()/session.getSessionLength() > .65){
+            if (session.getNumCorrect()  * 100/ session.getSessionLength() > 75) {
                 session.setCar("car");
-            }
-            else if(session.getNumCorrect()/session.getSessionLength() > .40){
+            } else if (session.getNumCorrect()  * 100/ session.getSessionLength() > 45) {
                 session.setCar("bike");
+            } else {
+                session.setCar("cycle");
             }
-            else{session.setCar("cycle");}
         } catch (Exception e) {
             session.setCar("car");
         }
-        
-    }
 
+    }
+    
     public Result initializeHelp() {
         return ok(views.html.help.render());
     }

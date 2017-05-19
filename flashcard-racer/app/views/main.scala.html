@@ -14,11 +14,9 @@
       		<div class="row column text-center">
         		<h1>@title</h1>
       		</div>
-      		<form method="GET" action="/language"/>
-                <input name="language" type="submit" value="en" id="ukFlag" title="English" />
-                <input name="language" type="submit" value="fr" id="frFlag" title="FranÃ§ais" />
+                <input name="language"  onclick=switchLanguage('en') id="ukFlag" title="English" />
+                <input name="language"  id="frFlag" onclick=switchLanguage('fr') title="Français" />
             
-            </form>
     	</div>
     	
     	
@@ -29,5 +27,11 @@
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="@routes.Assets.versioned("js/foundation.min.js")"></script>
 		<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+		<script>
+            function switchLanguage(lang) {
+                window.location.href = '/language?language='+lang
+            }
+            
+        </script>
     </body>
 </html>

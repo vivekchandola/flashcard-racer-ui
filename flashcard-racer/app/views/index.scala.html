@@ -4,7 +4,11 @@
 
 @main(title = Messages("homecontroller.index.title")) {
 
-<div class="row">
+<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/egg.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/easter.js")"></script>
+
+<div class="row" >
   <div class="medium-6 medium-centered large-4 large-centered columns">
     
     <div class="row column log-in-form">
@@ -13,6 +17,7 @@
     	<div class="column center">
             <a href="/practice" class="button medium hollow">@Messages("homecontroller.index.practiceMode")</a>
             <a href="/help" class="button medium hollow">@Messages("homecontroller.index.help")</a>
+            <img id="egggif" src="../assets/images/Vekma.gif" style="display: none;">
 
         <script>
             function switchLanguage(lang) {
@@ -20,20 +25,6 @@
             }
             
         </script>
-        <div class="dropdown">
-            <span class=" button medium hollow">Languages</span>
-            
-            
-            
-                        <div class="dropdown-content">
-                            <input  onclick="switchLanguage('en')" id="ukFlag"  />
-                            <input  onclick="switchLanguage('fr')" id="frFlag"  />
-                        </div>
-                        
-      
-            
-  
-</div>
             
     	</div>
     	
@@ -41,8 +32,8 @@
      </div>
     
   </div>
-  
-</div>
+  </div>
+
 
 }
 
