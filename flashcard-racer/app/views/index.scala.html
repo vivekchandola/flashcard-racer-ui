@@ -13,39 +13,25 @@
     	<div class="column center">
             <a href="/practice" class="button medium hollow">@Messages("homecontroller.index.practiceMode")</a>
             <a href="/help" class="button medium hollow">@Messages("homecontroller.index.help")</a>
-                	   <style>
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-</style>
-
-<div class="dropdown">
-  <span class=" button medium hollow">Languages</span>
-  <form method="GET" action="/language"/>
-                <div class="dropdown-content">
-                    <input name="language"  type="submit" value="en" id="ukFlag" title="English" />
-                    <input name="language"  type="submit" value="fr" id="frFlag" title="Français" />
-                </div>
-                
-                    
-                
+        <script>
+            function switchLanguage(lang) {
+                window.location.href = '/language?language='+lang
+            }
             
-    </form>
+        </script>
+        <div class="dropdown">
+            <span class=" button medium hollow">Languages</span>
+            
+            
+            
+                        <div class="dropdown-content">
+                            <input  onclick="switchLanguage('en')" id="ukFlag"  />
+                            <input  onclick="switchLanguage('fr')" id="frFlag"  />
+                        </div>
+                        
+      
+            
   
 </div>
             
