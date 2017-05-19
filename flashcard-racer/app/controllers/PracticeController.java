@@ -68,10 +68,26 @@ public class PracticeController extends Controller {
             form = formFactory.form(PracticeSession.class).fill(session);
             return ok(practice.render(form));
         } else {
+            setCarValue(session);
             return ok(practicescore.render(session));
         }
     }
     
+    private void setCarValue(PracticeSession session) {
+        try {
+            if(session.getNumCorrect()/session.getSessionLength() > .65){
+                session.setCar("car");
+            }
+            else if(session.getNumCorrect()/session.getSessionLength() > .40){
+                session.setCar("bike");
+            }
+            else{session.setCar("cycle");}
+        } catch (Exception e) {
+            session.setCar("car");
+        }
+        
+    }
+
     public Result initializeHelp() {
         return ok(views.html.help.render());
     }

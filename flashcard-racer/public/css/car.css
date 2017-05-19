@@ -1,0 +1,31 @@
+#car{
+    width:130px;
+    height:65px;
+    background:transparent url("../images/car.png") no-repeat center center;
+    background-size:100%;
+    position:absolute;
+    -webkit-animation: background 12s infinite normal;
+}
+
+#bike{
+    width:130px;
+    height:65px;
+    background:transparent url(http://static.cargurus.com/images/site/2007/06/21/2008_ford_edge-pic-15443.png) no-repeat center center;
+    background-size:100%;
+    position:absolute;
+    -webkit-animation: background 12s infinite normal;
+}
+
+#cycle{
+    width:130px;
+    height:65px;
+    background:transparent url(http://static.cargurus.com/images/site/2007/06/21/2008_ford_edge-pic-15443.png) no-repeat center center;
+    background-size:100%;
+    position:absolute;
+    -webkit-animation: background 12s infinite normal;
+}
+
+@-webkit-keyframes background {
+    0% {  left:50px; -webkit-transform:rotate(0deg); }
+    100% {  left:90%; -webkit-transform:rotate(0deg); }
+}
