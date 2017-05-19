@@ -12,6 +12,7 @@ public class PracticeSession {
 	private int timer;
 	private Difficulty difficulty;
 	private Card card;
+	private String car;
 
 	public PracticeSession() {
 		super();
@@ -105,5 +106,13 @@ public class PracticeSession {
 	public void setNumIncorrect(int numIncorrect) {
 		this.numIncorrect = numIncorrect;
 	}
+
+    public String getCar() {
+        return car;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
 
 }

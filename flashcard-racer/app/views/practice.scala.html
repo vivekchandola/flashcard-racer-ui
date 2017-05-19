@@ -7,6 +7,9 @@
 <script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
 <script type="text/javascript" src="@routes.Assets.versioned("js/timer.js")"></script>
 <script type="text/javascript" src="@routes.Assets.versioned("js/sound.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/d3.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/graphic.js")"></script>
+
 
 <script type="text/javascript">
 
@@ -17,8 +20,32 @@ jQuery(function ($) {
 	if(timer != 0){
     startTimer(timer, display);
 	}
+	var numberOfQuestions = @form("sessionLength").value();
+	var numberOfCorrect = @form("numCorrect").value();
+	var pieContainer =d3.select("#time");
+	graphicPoints(numberOfQuestions,numberOfCorrect);
+	
+	function startTimer(duration, display) {
+	    var timer = duration,  seconds;
+	    setInterval(function () {
+	    	var value = seconds;
+	        seconds = parseInt(timer % 60, 10);
+
+	        seconds = seconds < 10 ? "0" + seconds : seconds;
+	        
+	        graphicTime(seconds,duration,pieContainer,value);
+	        
+
+	        if (--timer < 0) {
+	        	$('form#practiceForm').submit();
+	        }
+	    }, 1000);
+	}
+
 	
 	$('audio').prop('muted', false);
+	
+	
 });
 </script>
 
@@ -71,10 +98,9 @@ jQuery(function ($) {
 				}
 		</div>	
         <div class="medium-4 columns" >
-          <h5>Next question in:</h6>
-          <h5>
-          <span id="time" style="color: red"></span> seconds!
-          </h4>
+        	<div id="time"></div>
+        	</br>
+        	<div id="points"></div>
           <audio id="background_audio" autoplay="autoplay" loop="loop" controls="controls">
   			<source src="../assets/sound/time.flac" />
 		</audio> 

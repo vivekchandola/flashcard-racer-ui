@@ -4,11 +4,18 @@
 
 @main(title = Messages("homecontroller.practicesessionscore.title")) {
 
+<link rel="stylesheet" href="@routes.Assets.versioned("css/car.css")">
     
 <div class="row">
-	<div class="medium-8 columns">
+	<div class="medium-5 columns">
+		<div class="row column">
 		<h1>@session.getNumCorrect() / @session.getSessionLength()</h1>
 		<a class="button" href="@routes.PracticeController.initializePractice()">Play again?</a>
+		</div>
+	</div>
+	<div class="medium-6 columns">
+		<div class="row column" id="@session.getCar()">
+		</div>
 	</div>
 </div>
 }
