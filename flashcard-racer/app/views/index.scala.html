@@ -8,13 +8,20 @@
   <div class="medium-6 medium-centered large-4 large-centered columns">
     
     <div class="row column log-in-form">
-	<h4 class="text-center">Practice the flash card game</h4>
-
-	<div class="column center">
-          <a href="/practice" class="button medium hollow">Practice mode!</a>
-          <a href="/help" class="button medium hollow">Help!</a>
-	</div>
-      </div>
+    	<h4 class="text-center">@Messages("homecontroller.index.practice")</h4>
+    
+    	<div class="column center">
+            <a href="/practice" class="button medium hollow">@Messages("homecontroller.index.practiceMode")</a>
+            <a href="/help" class="button medium hollow">@Messages("homecontroller.index.help")</a>
+  
+            <form method="GET" action="/language"/>
+                <input name="language" type="submit" class="button medium hollow" value="en" id="languageEn" title="English" />
+                <input name="language" type="submit" class="button medium hollow" value="fr"id="languageFr" title="Français" />
+            </form>
+    	</div>
+    	
+    	
+     </div>
     
   </div>
   
