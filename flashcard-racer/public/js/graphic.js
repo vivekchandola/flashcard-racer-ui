@@ -120,7 +120,7 @@ function graphicPoints(maxPoints,javaPoints,incorrectValue,pieContainer){
                 })
                 .style({
                     fill: d3.rgb('#000000'),
-                    'font-size': '12px'
+                    'font-size': '16px'
                 })
 
             plotGroup.append('text').text("/n").text(incorrectValue+ '/'+maxPoints+' incorrect').attr({
@@ -130,7 +130,7 @@ function graphicPoints(maxPoints,javaPoints,incorrectValue,pieContainer){
                     dx: 3
                 })
                 .style({
-                    fill: d3.rgb('#000000'),
+                    fill: d3.rgb('#FF0000'),
                     'font-size': '12px'
                 })
 
