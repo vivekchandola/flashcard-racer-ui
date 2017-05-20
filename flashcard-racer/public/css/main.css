@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 
+
 .homepage {
     background: url("../images/home.jpg") no-repeat;
     width: 100%;
@@ -56,18 +57,22 @@
 #frFlag {
    width: auto;
   background: url("../images/frFlag.png") no-repeat;
-  background-size:100%;
-    width: 30px;
-  height: 25px;
+  background-size:90%;
+    width: 35px;
+  height: 30px;
+  float: right;
+  align: right;
 
 }
 
 #ukFlag {
    width: auto;
   background: url("../images/ukFlag.png") no-repeat;
-  background-size:100%;
-    width: 30px;
-  height: 25px;
+  background-size:90%;
+  width: 35px;
+  height: 30px;
+    float: right;
+  align: right;
 }
 
 #egggif {

@@ -22,8 +22,13 @@ jQuery(function ($) {
 	}
 	var numberOfQuestions = @form("sessionLength").value();
 	var numberOfCorrect = @form("numCorrect").value();
+	var numberOfIncorrect = @form("numIncorrect").value();
 	var pieContainer =d3.select("#time");
-	graphicPoints(numberOfQuestions,numberOfCorrect);
+    var pieContainerCorrect =d3.select("#points");
+    //var pieContainerIncorrect =d3.select("#incorrect");
+
+	graphicPoints(numberOfQuestions,numberOfCorrect,numberOfIncorrect,pieContainerCorrect);
+	//graphicPoints(numberOfQuestions,numberOfIncorrect,'incorrect',pieContainerIncorrect);
 	
 	function startTimer(duration, display) {
 	    var timer = duration,  seconds;
@@ -53,8 +58,8 @@ jQuery(function ($) {
 
 <div class="row">
 	<!-- <div class="medium-6 medium-centered large-4 large-centered columns"> -->
-	<div class="medium-8 columns">
-		<div class="medium-7 columns" style="width: 20rem;">
+	<div class="row columns">
+		<div class="medium-6 columns">
 				<h1>@form("card.a").value() @form("card.op").value() @form("card.b").value()</h1>
 				@if(form.hasGlobalErrors) {
 					<div style="color:red">
@@ -98,12 +103,19 @@ jQuery(function ($) {
 				}
 		</div>	
         <div class="medium-4 columns" >
-        	<div id="time"></div>
+        	 <audio id="background_audio" autoplay="autoplay" loop="loop" controls="controls">
+  				<source src="../assets/sound/time.flac" />
+			</audio> 
+        	<div class="medium-6  columns">
+        		<div id="time"></div>
+        	</div>
         	</br>
-        	<div id="points"></div>
-          <audio id="background_audio" autoplay="autoplay" loop="loop" controls="controls">
-  			<source src="../assets/sound/time.flac" />
-		</audio> 
+        	<div class="row columns">
+        		<div id="points">
+        		</div>
+        	<div>
+        	</div>
+		</div>
         </div>
 	</div>
 <!-- 	<div class="medium-4 columns" data-sticky-container>

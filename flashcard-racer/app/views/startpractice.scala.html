@@ -15,7 +15,7 @@
     </div>
     </div>
 		<div class="row">
-		<div class="medium-6 columns" style="width:25rem;" id="difficulty">
+		<div class="medium-6 columns" id="difficulty">
 			<h5>@Messages("homecontroller.startpractice.difficulty")</h5>
 			<select name="difficulty">
 				<option value="EASY">Kia <label for="template" class="template">(Timer: 20 seconds, Ques: 5)</label></option>
@@ -23,7 +23,7 @@
 				<option value="HARD">Ferrari<label for="template" class="template">(Timer: 10 seconds, Ques: 20)</label></option>
 			</select>
 		</div>
-		<div class="medium-10 columns" style="width: 30rem;" id="options">
+		<div class="medium-10 columns" id="options">
 			<h5>Options</h5>
 			<div class="row columns" >
               <label>@Messages("homecontroller.startpractice.operators")</label>
@@ -59,11 +59,11 @@
             </div>
             </div>
 		</div>
-		<div class="row columns" style="width: 30rem;">
+		<div class="row columns">
 			<input type="submit" class="button expanded" value="Start Practice" ></input>
 		</div>
-		<div class="row columns" style="width: 30rem;">
-					<a href="/" class="button hollow expanded">@Messages("homecontroller.startpractice.back")</a>
+		<div class="row columns">
+			<a href="/" class="button hollow expanded">@Messages("homecontroller.startpractice.back")</a>
 		</div>
 		</div>
 	</form>
