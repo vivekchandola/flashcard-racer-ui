@@ -2,20 +2,20 @@
 
 @main(title = Messages("homecontroller.help.title")) {
 
-    
+ <link rel="stylesheet" href="@routes.Assets.versioned("css/main.css")">   
 		
 	<div class="row">
-	<div class="medium-8 columns">
+	<div class="large-8 columns">
 	<h3>@Messages("homecontroller.tutorial.title")</h3>
 	<form method="POST">
 		<div class="row">
 		<div class="row columns">
 			<video controls id="thevideo">
- 				<source src="../assets/video/muirbeach.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
+ 				<source src="../assets/video/Tutorial_math.webm" type='video/webm; codecs="vp8, vorbis"' >
 			</video>
 		</div>
 		<div class="row columns">
-					<a href="/" class="button hollow expanded">Back</a>
+					<a href="/" class="button expanded">Back</a>
 		</div>
 		</div>
 	</form>

@@ -2,7 +2,7 @@ var egg = new Egg();
 egg 
 	.addCode("c,a,r",function(){
 		jQuery('#egggif').fadeIn(500,function(){
-			window.setTimeout(function() {jQuery('#egggif').hide();},5000);
+			window.setTimeout(function() {jQuery('#egggif').hide();},8000);
 			});
 		})
 		.addHook(function(){
@@ -13,7 +13,7 @@ egg
 egg 
 	.addCode("c,r,e,d,i,t",function(){
 		jQuery('#credits').fadeIn(500,function(){
-			window.setTimeout(function() {jQuery('#credits').hide();},5000);
+			window.setTimeout(function() {jQuery('#credits').hide();},15000);
 			});
 		})
 		.addHook(function(){

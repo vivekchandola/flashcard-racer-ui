@@ -5,6 +5,9 @@
 @main(title = Messages("homecontroller.practicesessionscore.title")) {
 
 <link rel="stylesheet" href="@routes.Assets.versioned("css/car.css")">
+<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/egg.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/easter.js")"></script>
     
 <div class="row">
 	<div class="medium-8 columns">
@@ -12,6 +15,7 @@
 		<h1>@session.getNumCorrect() / @session.getSessionLength()</h1>
 		<a class="button" href="@routes.PracticeController.initializePractice()">Play again?</a>
 		</div>
+		<img id="credits" src="../assets/images/credits_v2.png" style="display: none;">
 	</div>
 	<div class="medium-6 columns">
 		<div class="row column" id="@session.getCar()">

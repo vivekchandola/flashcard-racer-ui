@@ -10,6 +10,7 @@ homecontroller.practiceride.title = Choisis ton ride !
 homecontroller.joingame.title = Rejoin le jeu
 homecontroller.game.title = Jeu
 homecontroller.help.title = Aide
+homecontroller.tutorial.title=Didacticiel
 
 homecontroller.index.practice = Pratiquez le jeux de flash card
 homecontroller.index.practiceMode = Nouvelle partie!

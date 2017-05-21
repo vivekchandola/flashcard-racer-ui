@@ -7,35 +7,30 @@
 <script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
 <script type="text/javascript" src="@routes.Assets.versioned("js/egg.min.js")"></script>
 <script type="text/javascript" src="@routes.Assets.versioned("js/easter.js")"></script>
-
-<div class="row" >
-  <div class="medium-6 medium-centered large-4 large-centered columns">
-    
-    <div class="row column log-in-form">
-    	<h4 class="text-center">@Messages("homecontroller.index.practice")</h4>
-    
-    	<div class="column center">
-            <a href="/practice" class="button medium hollow">@Messages("homecontroller.index.practiceMode")</a>
-            <a href="/help" class="button medium hollow">@Messages("homecontroller.index.help")</a>
-            <img id="egggif" src="../assets/images/Vekma.gif" style="display: none;">
-			<img id="credits" src="../assets/images/credits_v2.png" style="display: none;">
-
         <script>
             function switchLanguage(lang) {
                 window.location.href = '/language?language='+lang
             }
             
         </script>
-            
+        
+<div class="callout" >
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+    
+    <div class="row column log-in-form">
+    	<h4 class="text-center">@Messages("homecontroller.index.practice")</h4>
+    
+    	<div class="large-5 large-centered">
+            <a href="/practice" class="button medium expanded">@Messages("homecontroller.index.practiceMode")</a>
+            <a href="/help" class="button medium hollow expanded">@Messages("homecontroller.index.help")</a>
     	</div>
-    	
     	
      </div>
     
   </div>
   </div>
  
- <div class="large callout">
+ <div class="large">
 	 <img id="homepage" src="../assets/images/home.jpg">
  </div>
 
