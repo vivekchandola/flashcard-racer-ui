@@ -27,7 +27,7 @@ GET		/admin			    		controllers.AdminController.index
 POST	/admin			    		controllers.AdminController.login
 GET		/admin/login	    		controllers.AdminController.logout
 
-GET     /language                   controllers.LanguageController.index(language: String)
+GET     /language/:language/:address                   controllers.LanguageController.index(language: String,address : String)
 
 
 # Map static resources from the /public folder to the /assets URL path
