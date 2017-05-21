@@ -1,4 +1,4 @@
-function graphicPoints(maxPoints,javaPoints){
+function graphicPoints(maxPoints,javaPoints,incorrectValue,pieContainer){
 	/*
 	 * To get it to work the following valus are needed maxPoints(int),
 	 * maxTime(int), javaTime(int), javaPoints(int) /*Gets the "points" from the
@@ -8,8 +8,8 @@ function graphicPoints(maxPoints,javaPoints){
 		   
            color = d3.scale.category20c();
 			/* sets the size of the points scale w = widht and h = hight */
-            var w = 240,
-                h = 120;
+            var w = 360,
+                h = 180;
 
 			/* sets the inner and outer arcs of the bar */	
             var radius = {
@@ -18,7 +18,6 @@ function graphicPoints(maxPoints,javaPoints){
             }
 
             var pi = Math.PI;
-            var pieContainer =d3.select("#points");
 
           
             var svgElem = pieContainer
@@ -98,7 +97,7 @@ function graphicPoints(maxPoints,javaPoints){
 
                     return function(t) {
                         d.endAngle = interpolate(t);
-                        middleCount.text(Math.floor(interpolateCount(t)) + '/'+maxPoints);
+                        middleCount.text(Math.floor(interpolateCount(t)) + '/'+maxPoints+' correct ');
 
                         return arcLine(d);
                     };
@@ -121,17 +120,17 @@ function graphicPoints(maxPoints,javaPoints){
                 })
                 .style({
                     fill: d3.rgb('#000000'),
-                    'font-size': '12px'
+                    'font-size': '16px'
                 })
 
-            plotGroup.append('text').text('points').attr({
+            plotGroup.append('text').text("/n").text(incorrectValue+ '/'+maxPoints+' incorrect').attr({
                     class: 'middleText',
                     'text-anchor': 'middle',
                     dy: -2,
                     dx: 3
                 })
                 .style({
-                    fill: d3.rgb('#000000'),
+                    fill: d3.rgb('#FF0000'),
                     'font-size': '12px'
                 })
 
@@ -151,8 +150,8 @@ function graphicTime(javaTime,maxTime,pieContainer,timeValue){
            
            color = d3.scale.category20c();
 
-            var w = 240,
-                h = 120;
+            var w = 360,
+                h = 180;
 
             var radius = {
                 "inner": h / 1.9,

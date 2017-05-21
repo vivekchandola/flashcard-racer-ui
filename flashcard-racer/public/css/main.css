@@ -1,12 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 
-.homepage {
+
+#homepage {
     background: url("../images/home.jpg") no-repeat;
     width: 100%;
-    height: 100%;
-    margin: auto;
-
+    height: 600px;
+	background-size: contain;
+    float: center;
+  align: center;
 }
+
 
 .log-in-form {
 	border: 1px solid #cacaca;
@@ -56,23 +59,27 @@
 #frFlag {
    width: auto;
   background: url("../images/frFlag.png") no-repeat;
-  background-size:100%;
-    width: 30px;
-  height: 25px;
+  background-size:90%;
+    width: 35px;
+  height: 30px;
+  float: right;
+  align: right;
 
 }
 
 #ukFlag {
    width: auto;
   background: url("../images/ukFlag.png") no-repeat;
-  background-size:100%;
-    width: 30px;
-  height: 25px;
+  background-size:90%;
+  width: 35px;
+  height: 30px;
+    float: right;
+  align: right;
 }
 
 #egggif {
-	position: absolute; top: 50%; left: 45%; display: none; 
-	  width: 400px;
-  height: 200px;
+	position: absolute; top: 20%; left: 40%; display: none; 
+	  width: 600px;
+  height: 300px;
 	}
  
