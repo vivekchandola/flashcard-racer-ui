@@ -5,6 +5,12 @@ import java.util.List;
 
 import com.google.common.base.Strings;
 
+/**
+ * 
+ * holds the user selected options
+ * @author Vivek
+ *
+ */
 public class UserSelectedChoice {
 
 	private final int numberOfQuestions;

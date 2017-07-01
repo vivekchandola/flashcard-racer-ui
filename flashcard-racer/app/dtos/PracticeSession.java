@@ -3,6 +3,14 @@ package dtos;
 import models.enums.Difficulty;
 import util.CardUtil;
 
+/**
+ * 
+ * holds the session informtion
+ * loads a new deck of card
+ * 
+ * @author Vivek
+ *
+ */
 public class PracticeSession {
 
 	private int sessionLength;

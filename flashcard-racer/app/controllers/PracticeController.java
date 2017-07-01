@@ -19,10 +19,21 @@ public class PracticeController extends Controller {
     @Inject
     private FormFactory formFactory;
 
+    /**
+     * 
+     * Default page with options
+     * startpractice.scala.html
+     * @return
+     */
     public Result initializePractice() {
         return ok(startpractice.render());
     }
 
+    /**
+     * Get the selected values from the options and load the math card with selected options
+     * Holds the selected choice in session
+     * @return
+     */
     public Result startSession() {
         DynamicForm requestData = formFactory.form().bindFromRequest();
         String value = requestData.get("radio1");
@@ -39,6 +50,12 @@ public class PracticeController extends Controller {
         return ok(practice.render(form));
     }
 
+    /**
+     * 
+     * Creates card deck with user defined selected options
+     * @param requestData
+     * @return
+     */
     private Difficulty createGameWithOptions(DynamicForm requestData) {
         Difficulty difficulty = Difficulty.CUSTOM;
         String add = requestData.get("add");
@@ -59,6 +76,12 @@ public class PracticeController extends Controller {
         return difficulty;
     }
 
+    /**
+     * 
+     * Called while submitting a math card
+     * Checks for number of questions answered and redirect either to next question or to final result page
+     * @return
+     */
     public Result submitSession() {
         Form<PracticeSession> form = formFactory.form(PracticeSession.class).bindFromRequest();
         PracticeSession session = form.get();
@@ -73,6 +96,11 @@ public class PracticeController extends Controller {
         }
     }
 
+    /**
+     * 
+     * Load the different object which depends on number of correct answer by the user
+     * @param session
+     */
     private void setCarValue(PracticeSession session) {
         try {
             if (session.getNumCorrect()  * 100/ session.getSessionLength() > 75) {
@@ -88,6 +116,10 @@ public class PracticeController extends Controller {
 
     }
     
+    /**
+     * Loads the help page
+     * @return
+     */
     public Result initializeHelp() {
         return ok(views.html.help.render());
     }

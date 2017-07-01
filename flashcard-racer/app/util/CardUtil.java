@@ -1,18 +1,15 @@
 package util;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-import com.google.common.base.Strings;
-
 import dtos.Card;
-import dtos.UserSelectedChoice;
 import models.enums.Difficulty;
-import play.data.DynamicForm;
 
 public final class CardUtil {
 
+    /**
+     * generate new cards based on enum difficulty
+     */
     public static Card randomCard(Difficulty diff) {
         Random rand = new Random();
         String operator;
@@ -68,18 +65,13 @@ public final class CardUtil {
         return 1 + rand.nextInt(multiplier - 1);
     }
 
-    public static Card randomCard(UserSelectedChoice userChoice) {
 
-        Random random = new Random();
-        String operator = userChoice.getOperators().get(random.nextInt(userChoice.getOperators().size()));
-        int firstNumber = random.nextInt(userChoice.getRange()) + userChoice.getMinimumNumber();
-        int secondNumber = random.nextInt(userChoice.getRange()) + userChoice.getMinimumNumber();
-        if ("/".equals(operator)) {
-            firstNumber = firstNumber * secondNumber;
-        }
-        return new Card(firstNumber, secondNumber, operator);
-    }
-    
+    /**
+     * 
+     * generate new cards based on enum difficulty
+     * @param userChoice
+     * @return
+     */
     public static Card randomPracticeCard(Difficulty userChoice) {
 
         Random random = new Random();
@@ -92,6 +84,12 @@ public final class CardUtil {
         return new Card(firstNumber, secondNumber, operator);
     }
 
+    /**
+     * 
+     * evaluate the submitted answer
+     * @param card
+     * @return
+     */
     public static boolean evaluate(Card card) {
         if (card == null || card.getResult() == null ) {
             return false;
@@ -109,20 +107,5 @@ public final class CardUtil {
                 return false;
         }
     }
-    
-    
 
-    public static List<Card> loadCards(DynamicForm form) {
-        List<Card> cardLists = new ArrayList<>();
-        int size = Integer.parseInt(form.data().get("size"));
-        for (int i = 0; i < size; i++) {
-            String firstNumber = form.data().get("firstnumber" + i);
-            String operator = form.data().get("operator" + i);
-            String secondnumber = form.data().get("secondnumber" + i);
-            String discard = form.data().get("discard" + i);
-            if (Strings.isNullOrEmpty(discard))
-                cardLists.add(new Card(Integer.parseInt(firstNumber), Integer.parseInt(secondnumber), operator));
-        }
-        return cardLists;
-    }
 }

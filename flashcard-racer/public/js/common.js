@@ -3,6 +3,9 @@ var undo = [];
 // Holds all Redo items
 var redo = [];
 
+/**
+ * Hide unhide user selected options and template based option
+ */
 $(document).ready(function() {
 	$('#options').hide();
 	$(".radio").change(function() { // use change event
@@ -20,6 +23,10 @@ $(document).ready(function() {
 	});
 });
 
+/**
+ * Undo-redo options
+ * @param type
+ */
 function optionsDisable(type) {
 	$("#" + type).prop('disabled', true);
 	$("#" + type + "label").addClass('disabled');
@@ -32,6 +39,10 @@ function optionsDisable(type) {
 	$('#undo').css('cursor', 'pointer');
 }
 
+/**
+ * Undo-redo options
+ * @param type
+ */
 function optionFunctionEnable(type) {
 	$("#" + type).prop('disabled', false);
 	$("#" + type + "label").addClass('enabled');
@@ -39,6 +50,10 @@ function optionFunctionEnable(type) {
 	$("#" + type).prop('checked', true); 
 }
 
+/**
+ * Undo-redo options
+ * @param type
+ */
 function optionFunctionDisable(type) {
 	$("#" + type).prop('disabled', true);
 	$("#" + type + "label").addClass('disabled');
@@ -46,6 +61,10 @@ function optionFunctionDisable(type) {
 	$("#" + type).prop('checked', false); 
 }
 
+/**
+ * Undo-redo options
+ * @param type
+ */
 function checkOption(action) {
 	if (action.action == 'enable') {
 		optionFunctionEnable(action.id);

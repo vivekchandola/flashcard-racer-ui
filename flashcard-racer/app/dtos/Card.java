@@ -3,6 +3,13 @@ package dtos;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 
+ * Card pojo class
+ * Hold numbers and opeartor
+ * @author Vivek
+ *
+ */
 public class Card {
 	private static final Pattern p = Pattern.compile("(\\d*)\\s*(\\+|-|\\*|/)\\s*(\\d*)");
 	private int a;

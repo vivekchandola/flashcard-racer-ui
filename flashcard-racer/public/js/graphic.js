@@ -1,3 +1,11 @@
+/**
+ * 
+ * displays the animation for correct/ incorrect answer in the game page
+ * @param maxPoints
+ * @param javaPoints
+ * @param incorrectValue
+ * @param pieContainer
+ */
 function graphicPoints(maxPoints,javaPoints,incorrectValue,pieContainer){
 	/*
 	 * To get it to work the following valus are needed maxPoints(int),
@@ -141,7 +149,14 @@ function graphicPoints(maxPoints,javaPoints,incorrectValue,pieContainer){
 
 }
 
-
+/**
+ * 
+ * loads the timer in the game with input values
+ * @param javaTime
+ * @param maxTime
+ * @param pieContainer
+ * @param timeValue
+ */
 function graphicTime(javaTime,maxTime,pieContainer,timeValue){
   
     
