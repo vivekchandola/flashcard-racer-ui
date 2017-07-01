@@ -3,20 +3,76 @@
 @main(title = Messages("homecontroller.practiceride.title")) {
 
     
-<div class="row">
-			<h1>Pick yo' ride</h1>
-			<form method="POST" action="@routes.PracticeController.startSession()">
-				<div class="medium-6 columns" style="width: 20rem;">
-				<h5>Difficulty</h5>
-				<select name="difficulty">
-					<option value="EASY">Kia</option>
-					<option value="MEDIUM">BMW</option>
-					<option value="HARD">Ferrari</option>
-				</select>
-				</div>
-				<div class="row columns" style="width: 20rem;">
-				<input type="submit" class="button expanded" value="Start practice!"/>
-				</div>
-			</form>
-		</div>	
+		
+		<div class="row">
+	<div class="medium-8 columns">
+	<h3>@Messages("homecontroller.startpractice.select")</h3>
+	<form method="POST" action="@routes.PracticeController.startSession()">
+		<div class="row">
+		<div class="large-4 columns">
+      <label for="radio1"><input name="radio1" type="radio" class="radio" CHECKED value="1"><span class="custom radio checked"></span>@Messages("homecontroller.startpractice.sTemplates")</label>
+      <label for="radio1"><input name="radio1" type="radio" class="radio" value="2"><span class="custom radio"></span>@Messages("homecontroller.startpractice.sOptions")</label>
+    </div>
+    </div>
+		<div class="row">
+		<div class="medium-6 columns" id="difficulty">
+			<h5>@Messages("homecontroller.startpractice.difficulty")</h5>
+			<select name="difficulty">
+				<option value="EASY">Kia <label for="template" class="template">(Timer: 20 seconds, Ques: 5)</label></option>
+				<option value="MEDIUM">BMW<label for="template" class="template">(Timer: 15 seconds, Ques: 10)</label></option>
+				<option value="HARD">Ferrari<label for="template" class="template">(Timer: 10 seconds, Ques: 20)</label></option>
+			</select>
+		</div>
+		<div class="medium-10 columns" id="options">
+			<h5>Options</h5>
+			<div class="row columns" >
+              <label>@Messages("homecontroller.startpractice.operators")</label>
+              <input id="add" type="checkbox" name="add" checked value="add" onclick="optionsDisable('add')"><label for="add" id="addlabel">@Messages("homecontroller.startpractice.add")</label>
+              <input id="substract" type="checkbox" name="substract" value="sub" checked onclick="optionsDisable('substract')"><label for="substract" id="substractlabel">@Messages("homecontroller.startpractice.substract")</label>
+              <input id="multiply" type="checkbox" name="multiply" value="multi"  checked onclick="optionsDisable('multiply')"><label for="multiply" id="multiplylabel">@Messages("homecontroller.startpractice.multiply")</label>
+              <input id="division" type="checkbox" name="division" value="div"  checked onclick="optionsDisable('division')"><label for="division" id="divisionlabel">Division</label>
+            </div>
+           <div class="row columns" >
+              <div class="medium-6" id="undo">
+              </div>
+              <div class="medium-6" id="redo">
+              </div>
+            </div>
+			<div class="row columns" >
+           <div class="large-5 medium-5 columns">
+              <label>Questions</label>
+              <input type="text" placeholder="Default (10)" id="questions" name="questions" class="numbersOnly"/>
+            </div>
+            <div class="large-5 medium-5 columns">
+              <label>@Messages("homecontroller.startpractice.tLimit")</label>
+              <input type="text" placeholder="Default (20)" id="timelimit" name="timelimit" class="numbersOnly" />
+            </div>
+            </div>
+            <div class="row columns" >
+           <div class="large-5 medium-5 columns">
+              <label>@Messages("homecontroller.startpractice.maxNumber")</label>
+              <input type="text" placeholder="Default (10)" id="maxnumber" name="maxnumber" class="numbersOnly"/>
+            </div>
+            <div class="large-5 medium-5 columns">
+              <label>@Messages("homecontroller.startpractice.minNumber")</label>
+              <input type="text" placeholder="Default (0)" id="minnumber" name="minnumber" class="numbersOnly" />
+            </div>
+            </div>
+		</div>
+		<div class="row columns">
+			<input type="submit" class="button expanded" value="Start Practice" ></input>
+		</div>
+		<div class="row columns">
+			<a href="/" class="button hollow expanded">@Messages("homecontroller.startpractice.back")</a>
+			<img id="egggif" src="../assets/images/Vekma.gif" style="display: none;">
+		</div>
+		</div>
+	</form>
+	</div>
+	</div>	
+
+<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/common.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/egg.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/easter.js")"></script>
 }

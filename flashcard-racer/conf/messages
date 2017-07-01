@@ -9,3 +9,23 @@ homecontroller.practicesessionscore.title = Practice Session Score
 homecontroller.practiceride.title = Pick yo' ride
 homecontroller.joingame.title = Join a game
 homecontroller.game.title = Game
+homecontroller.help.title = Help
+homecontroller.tutorial.title=Tutorial
+
+
+homecontroller.index.practice = Practice the flash card game
+homecontroller.index.practiceMode = New game!
+homecontroller.index.help = Help!
+homecontroller.startpractice.select = Select your option to create a game
+homecontroller.startpractice.difficulty = Difficulty
+homecontroller.startpractice.operators = Choose operators
+homecontroller.startpractice.tLimit = Time limit
+homecontroller.startpractice.maxNumber = Maximum Number
+homecontroller.startpractice.minNumber = Minimum Number
+homecontroller.startpractice.back = Back
+homecontroller.startpractice.sTemplates = Select from template
+homecontroller.startpractice.sOptions = Select from option(s)
+homecontroller.startpractice.add = Add
+homecontroller.startpractice.substract = Substract
+homecontroller.startpractice.multiply = Multiply
+homecontroller.startpractice.startpractice = Start Practice !

@@ -3,6 +3,14 @@ package dtos;
 import models.enums.Difficulty;
 import util.CardUtil;
 
+/**
+ * 
+ * holds the session informtion
+ * loads a new deck of card
+ * 
+ * @author Vivek
+ *
+ */
 public class PracticeSession {
 
 	private int sessionLength;
@@ -12,6 +20,7 @@ public class PracticeSession {
 	private int timer;
 	private Difficulty difficulty;
 	private Card card;
+	private String car;
 
 	public PracticeSession() {
 		super();
@@ -66,7 +75,7 @@ public class PracticeSession {
 		session.setNumCorrect(0);
 		session.setNumIncorrect(0);
 		session.setTimer(diff.getTimer());
-		session.setCard(CardUtil.randomCard(diff));
+		session.setCard(CardUtil.randomPracticeCard(diff));
 
 		return session;
 	}
@@ -105,5 +114,13 @@ public class PracticeSession {
 	public void setNumIncorrect(int numIncorrect) {
 		this.numIncorrect = numIncorrect;
 	}
+
+    public String getCar() {
+        return car;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
 
 }

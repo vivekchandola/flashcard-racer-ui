@@ -6,6 +6,11 @@
 
 <script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
 <script type="text/javascript" src="@routes.Assets.versioned("js/timer.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/sound.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/d3.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/graphic.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/egg.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/easter.js")"></script>
 
 <script type="text/javascript">
 
@@ -16,6 +21,37 @@ jQuery(function ($) {
 	if(timer != 0){
     startTimer(timer, display);
 	}
+	var numberOfQuestions = @form("sessionLength").value();
+	var numberOfCorrect = @form("numCorrect").value();
+	var numberOfIncorrect = @form("numIncorrect").value();
+	var pieContainer =d3.select("#time");
+    var pieContainerCorrect =d3.select("#points");
+    //var pieContainerIncorrect =d3.select("#incorrect");
+
+	graphicPoints(numberOfQuestions,numberOfCorrect,numberOfIncorrect,pieContainerCorrect);
+	//graphicPoints(numberOfQuestions,numberOfIncorrect,'incorrect',pieContainerIncorrect);
+	
+	function startTimer(duration, display) {
+	    var timer = duration,  seconds;
+	    setInterval(function () {
+	    	var value = seconds;
+	        seconds = parseInt(timer % 60, 10);
+
+	        seconds = seconds < 10 ? "0" + seconds : seconds;
+	        
+	        graphicTime(seconds,duration,pieContainer,value);
+	        
+
+	        if (--timer < 0) {
+	        	$('form#practiceForm').submit();
+	        }
+	    }, 1000);
+	}
+
+	
+	$('audio').prop('muted', false);
+	
+	
 });
 </script>
 
@@ -23,8 +59,8 @@ jQuery(function ($) {
 
 <div class="row">
 	<!-- <div class="medium-6 medium-centered large-4 large-centered columns"> -->
-	<div class="medium-8 columns">
-		<div class="medium-7 columns" style="width: 20rem;">
+	<div class="row columns">
+		<div class="medium-6 columns">
 				<h1>@form("card.a").value() @form("card.op").value() @form("card.b").value()</h1>
 				@if(form.hasGlobalErrors) {
 					<div style="color:red">
@@ -68,19 +104,28 @@ jQuery(function ($) {
 				}
 		</div>	
         <div class="medium-4 columns" >
-          <h5>Next question in:</h6>
-          <h5>
-          <span id="time" style="color: red"></span> seconds!
-          </h4>
+        	 <audio id="background_audio" autoplay="autoplay" loop="loop" controls="controls">
+  				<source src="../assets/sound/time.flac" />
+			</audio> 
+        	<div class="medium-6  columns">
+        		<div id="time"></div>
+        	</div>
+        	</br>
+        	<div class="row columns">
+        		<div id="points">
+        		</div>
+        	<div>
+        	</div>
+		</div>
         </div>
 	</div>
-	<div class="medium-4 columns" data-sticky-container>
+<!-- 	<div class="medium-4 columns" data-sticky-container>
         <div class="sticky" data-sticky data-anchor="content">
           <h4>Score:</h4>
                     </br>
           <h5>Correct answer: @form("numCorrect").value() / @form("sessionLength").value()</h5>
           <h5>Incorrect answer: <span style="color: red">@form("numIncorrect").value()/ @form("sessionLength").value()</span> </h5>
         </div>
-      </div>
+      </div> -->
 </div>
 }

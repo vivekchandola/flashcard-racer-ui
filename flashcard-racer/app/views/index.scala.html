@@ -1,36 +1,35 @@
-@import dtos.LoginDTO
-
-@(form: Form[LoginDTO])
-
 @main(title = Messages("homecontroller.index.title")) {
 
-<div class="row">
+<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/egg.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/easter.js")"></script>
+        <script>
+            function switchLanguage(lang) {
+                window.location.href = '/language?language='+lang
+            }
+            
+        </script>
+        
+<div class="callout" >
   <div class="medium-6 medium-centered large-4 large-centered columns">
     
     <div class="row column log-in-form">
-	<h4 class="text-center">Enter your username and password</h4>
-
-	@helper.form(action=routes.HomeController.login()) {
-	<div class="medium-9 column">
-	  @helper.inputText(form("login"), '_showConstraints -> false, '_label -> "Username")
-	  @helper.inputPassword(form("password"), '_showConstraints -> false, '_label -> "Password")
-	  @if(flash.containsKey("errorMsg")) {@flash.get("errorMsg")}
-	</div>
-	
-	<div class="columns">
-	  <input type="submit" class="button expanded" value="Login">  
-	</div>
-	}
-	<div class="column center">
-          <a href="/teacherlogin" class="button hollow medium">Teacher login!</a>
-          
-          <a href="/admin" class="button hollow medium">Admin login!</a>
-	</div>
-      </div>
+    	<h4 class="text-center">@Messages("homecontroller.index.practice")</h4>
+    
+    	<div class="large-5 large-centered">
+            <a href="/practice" class="button medium expanded">@Messages("homecontroller.index.practiceMode")</a>
+            <a href="/help" class="button medium hollow expanded">@Messages("homecontroller.index.help")</a>
+    	</div>
+    	
+     </div>
     
   </div>
-  
-</div>
+  </div>
+ 
+ <div class="large">
+	 <img id="homepage" src="../assets/images/home.jpg">
+ </div>
+
 
 }
 

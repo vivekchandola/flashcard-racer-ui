@@ -1,0 +1,27 @@
+@import dtos._ 
+
+@main(title = Messages("homecontroller.help.title")) {
+
+ <link rel="stylesheet" href="@routes.Assets.versioned("css/main.css")">   
+		
+	<div class="row">
+	<div class="large-8 columns">
+	<h3>@Messages("homecontroller.tutorial.title")</h3>
+	<form method="POST">
+		<div class="row">
+		<div class="row columns">
+			<video controls id="thevideo">
+ 				<source src="../assets/video/Tutorial_math.webm" type='video/webm; codecs="vp8, vorbis"' >
+			</video>
+		</div>
+		<div class="row columns">
+					<a href="/" class="button expanded">Back</a>
+		</div>
+		</div>
+	</form>
+	</div>
+	</div>	
+
+<script type="text/javascript" src="@routes.Assets.versioned("js/jquery.js")"></script>
+<script type="text/javascript" src="@routes.Assets.versioned("js/common.js")"></script>
+}
